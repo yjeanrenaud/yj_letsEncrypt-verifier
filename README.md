@@ -1,5 +1,5 @@
 # yj_letsEncrypt-verifier
-As LetsEncrypt discontinues their e-mail warning for expiring certificates, I wrote something to check my own. Exisiting solutions often require that the hosts are reachable from the internet, which is someting I do not have for all certificates I use. 
+As [LetsEncrypt discontinues their e-mail warning for expiring server certificates](https://letsencrypt.org/2025/01/22/ending-expiration-emails/), I wrote something to check my own. Exisiting solutions often require that the hosts are reachable from the internet, which is someting I do not have for all server certificates I use. 
 (Yes, I tls-encrypt traffic in my own private network, too, by manipulating my own dns servers tables to have FQDN resolved locally, too. Like that, I can use services that depend on encrypted transmissions with the same ease from within and beyond my reverse proxy).
 
 ## prerequisites and dependencies
