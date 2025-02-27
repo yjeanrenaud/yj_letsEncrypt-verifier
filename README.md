@@ -10,7 +10,7 @@ As [LetsEncrypt discontinues their e-mail warning for expiring server certificat
 - python libraries: socket, asyncio and logbook: `pip install socket asyncio logbook`
 # setup and usage
 - copy [tls_check_threema.py](https://github.com/yjeanrenaud/yj_letsEncrypt-verifier/blob/main/tls_check_threema.py) to a secure folder and make it executeable `chmod a+x tls_check_threema.py`
-- fill in your detials:
+- fill in your details:
   - **threemaRcptID** with the Threema ID that shall receive alerts. It is usually eight characters long.
   - **threemaGatewayID** with the Threema ID of your gateway. It usually starts with a * and seven charakters.
   - **threemaSecret** contains the secret of your gateway. You can see it when you log into [gateway.threema.ch](https://gateway.threema.ch).
