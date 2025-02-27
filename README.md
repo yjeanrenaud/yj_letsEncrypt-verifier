@@ -1,6 +1,6 @@
 # yj_letsEncrypt-verifier
 As LetsEncrypt discontinues their e-mail warning for expiring certificates, I wrote something to check my own. Exisiting solutions often require that the hosts are reachable from the internet, which is someting I do not have for all certificates I use. 
-(Yes, I tls-encrypt traffic in my own private network, too, by manipulating my own dns servers tables to have FQDN resolved locally, too. Like that, I can use services that depend on encrypted transmissions with the same easy from within and beyond my reverse proxy).
+(Yes, I tls-encrypt traffic in my own private network, too, by manipulating my own dns servers tables to have FQDN resolved locally, too. Like that, I can use services that depend on encrypted transmissions with the same ease from within and beyond my reverse proxy).
 
 ## prerequisites and dependencies
 - you need to set up a threema gateway account and have some credits balance on it. see [https://gateway.threema.ch](https://gateway.threema.ch) for this. See [threema-msgapi-sdk-python](https://github.com/threema-ch/threema-msgapi-sdk-python/) for details.
@@ -20,7 +20,7 @@ As LetsEncrypt discontinues their e-mail warning for expiring certificates, I wr
 
 - test your credentials:
     `threema-gateway send-e2e [RCPT_ID] [*GATEWAY_ID] [SECRET] "private:PRIVATE_KEY" "This is a test"`.
-     optionally, you may also add a line to the python file: `await send_alert("FAKE.DOMAIN.EXAMPLE", 2, "01.03.2025", threemaRcptID)` within `main()`. Be sure to remove/comment that line after your initial test run (`./tls_check_threema.py`)
+     optionally, you may also add a line to the python file: `await send_alert("FAKE.DOMAIN.EXAMPLE", 2, "01.03.2025", threemaRcptID)` within `main()`. Be sure to remove/comment that line after your initial test run (`./tls_check_threema.py`). Otherwise, you get that message every time the script is executed and it needlessly consumes your Threema Gateway balance.
 - set up a cronjob for regular checks on your domains tls certificates:
   e.g. `cron -e` and insert the line `11 5 * * * /usr/bin/enc python3 /path/to/tls_check_threema.py` so every day at 11:05 am, the checking is done.
 
